@@ -1,5 +1,6 @@
 import javax.swing.*;
-public class CalculatorSwing{
+import java.awt.event.*;
+public class CalculatorSwing implements ActionListener{
     JFrame f;
 	JTextField t;
     JButton[] b = new JButton[17];
@@ -32,6 +33,9 @@ public class CalculatorSwing{
     b[16] = new JButton(bText[16]);
     b[16].setBounds(110,380,100,40);
     f.add(b[16]);
+    // Add action listeners to buttons
+    for (JButton button : b) 
+        button.addActionListener(this);
 }//end of CalculatorSwing	
     public static void main(String[] args){
         new CalculatorSwing();
